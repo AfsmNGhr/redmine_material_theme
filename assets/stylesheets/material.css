@@ -3,11 +3,11 @@
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url(./fonts/Material-Design-Icons.eot);
-    src: url(./fonts/Material-Design-Icons.eot?#iefix) format('embedded-opentype'),
-    url(./fonts/Material-Design-Icons.svg#material-designicons) format('svg'),
-    url(./fonts/Material-Design-Icons.woff) format('woff'),
-    url(./fonts/Material-Design-Icons.ttf) format('truetype');
+    src: url(./fonts/MaterialIcons-Regular.eot);
+    src: url(./fonts/MaterialIcons-Regular.eot?#iefix) format('embedded-opentype'),
+    url(./fonts/MaterialIcons-Regular.woff) format('woff'),
+    url(./fonts/MaterialIcons-Regular.woff2) format('woff2'),
+    url(./fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 .material-icons {
