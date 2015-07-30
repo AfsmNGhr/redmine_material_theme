@@ -1,0 +1,60 @@
+@import url(material.min.css);
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./fonts/Material-Design-Icons.eot);
+    src: url(./fonts/Material-Design-Icons.eot?#iefix) format('embedded-opentype'),
+    url(./fonts/Material-Design-Icons.svg#material-designicons) format('svg'),
+    url(./fonts/Material-Design-Icons.woff) format('woff'),
+    url(./fonts/Material-Design-Icons.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+
+}
+
+#top-menu {
+    position: fixed;
+    top: 0;
+    left: -59px;
+    width: 115px;
+    height: 100%;
+    background: rgb(76,175,80);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+#header {
+    margin-left: -1px;
+    min-height: 3em;
+    background: rgb(76,175,80);
+}
+
+#main-menu li a:hover, #main-menu li a.selected {
+    box-sizing: border-box;
+    box-shadow: 0.5px 1px 3px 0.5px rgba(0, 0, 0, 0.2);
+    background: rgb(139,195,74) !important;
+    color: white !important;
+}

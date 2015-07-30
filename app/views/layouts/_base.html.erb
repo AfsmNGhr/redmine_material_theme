@@ -1,0 +1,62 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <div class="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+    <header>
+      <nav class="mdl-navigation mdl-color--blue-grey-800">
+        <div id="account">
+          <%= render_menu :account_menu -%>
+        </div>
+        <%= content_tag('div', "#{l(:label_logged_as)} #{link_to_user(User.current, :format => :username)}".html_safe, :id => 'loggedas') if User.current.logged? %>
+        <%= render_menu :top_menu if User.current.logged? || !Setting.login_required? -%>
+      </nav>
+    </header>
+  </div>
+
+  <header class="mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
+    <div id="header">
+      <div class="mdl-layout__header-row">
+        <h1 class="mdl-layout-title"><%= page_header_title %></h1>
+        <div class="mdl-layout-spacer"></div>
+        <% if User.current.logged? || !Setting.login_required? %>
+          <div id="quick-search">
+            <%= form_tag({:controller => 'search', :action => 'index', :id => @project}, :method => :get ) do %>
+              <%= hidden_field_tag(controller.default_search_scope, 1, :id => nil) if controller.default_search_scope %>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for='q'>
+                  <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                  <label for='q'>
+                    <%= text_field_tag 'q', @question, :size => 20, :class => 'mdl-textfield__input', :accesskey => accesskey(:quick_search) %>
+                  </label>
+                </div>
+              </div>
+            <% end %>
+            <%= render_project_jump_box %>
+          </div>
+        <% end %>
+
+        <% if display_main_menu?(@project) %>
+          <div id="main-menu">
+            <%= render_main_menu(@project) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </header>
+
+  <div class="mdl-layout__content mdl-color--grey-100">
+    <div id="main" class="<%= sidebar_content? ? '' : 'nosidebar' %>">
+      <div id="sidebar">
+        <%= yield :sidebar %>
+        <%= view_layouts_base_sidebar_hook_response %>
+      </div>
+
+      <div id="content">
+        <%= render_flash_messages %>
+        <%= yield %>
+        <%= call_hook :view_layouts_base_content %>
+        <div style="clear:both;"></div>
+      </div>
+    </div>
+  </div>
+</div>
