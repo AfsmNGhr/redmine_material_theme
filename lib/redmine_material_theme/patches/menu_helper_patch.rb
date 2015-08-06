@@ -14,19 +14,18 @@ module RedmineMaterialTheme::Patches::MenuHelperPatch
              when :account_menu
                links.empty? ? nil : content_tag('ul', links.join("\n").html_safe,
                                                 for: 'user-menu',
-                                                class: ['scrollable-menu', 'mdl-menu',
+                                                class: ['scrollable-menu',
                                                         'mdl-menu--bottom-left',
-                                                        'mdl-js-menu',
+                                                        'mdl-js-menu', 'mdl-menu',
                                                         'mdl-js-ripple-effect'])
              when :top_menu
                links.empty? ? nil : content_tag(:ul, links.join("\n").html_safe,
                                                 class: 'nav-scrollable-menu')
              when :project_menu, :application_menu
                links.empty? ? nil : content_tag(:ul, links.join("\n").html_safe,
-                                                      class: ['main-scrollable-menu',
-                                                              'mdl-tabs__tab-bar',
-                                                              'mdl-tabs', 'mdl-js-tabs',
-                                                              'mdl-js-ripple-effect'])
+                                                class: ['mdl-tabs__tab-bar',
+                                                        'mdl-tabs', 'mdl-js-tabs',
+                                                        'mdl-js-ripple-effect'])
              else
                links.empty? ? nil : content_tag('ul', links.join("\n").html_safe)
              end

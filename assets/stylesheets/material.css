@@ -74,29 +74,21 @@
     overflow-y: auto;
 }
 
-.scrollable-main-menu {
-    max-height: 330px;
-    overflow-y: hidden;
-    overflow-x: auto;
-}
-
 .scrollable-menu::-webkit-scrollbar,
-.main-scrollable-menu:-webkit-scrollbar,
 .nav-scrollable-menu:-webkit-scrollbar {
   -webkit-appearance: none;
   width: 4px;
 }
 
 .scrollable-menu::-webkit-scrollbar-thumb,
-.nav-scrollable-menu:-webkit-scrollbar-thumb,
-.main-scrollable-menu:-webkit-scrollbar-thumb {
+.nav-scrollable-menu:-webkit-scrollbar-thumb {
   border-radius: 3px;
   background-color: lightgray;
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.75);
 }
 
-ul, ol {
-    list-style-type: none !important;
+.box p, .box h3, .box a, .box ul {
+    margin-left: 10px;
 }
 
 a.mdl-button, .mdl-menu__item {
@@ -125,6 +117,49 @@ a.mdl-tabs__tab {
 
 #main-menu li:hover, #main-menu li .selected {
     background: none;
+}
+
+h3, h2, .tabs {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: .02em;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+legend {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: .02em;
+    font-weight: 400;
+    box-sizing: border-box;
+    backdrop-filter: blur(1px);
+}
+
+label {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: .02em;
+    box-sizing: border-box;
+    backdrop-filter: blur(1px);
+}
+
+#sidebar h3 {
+    margin-top: 30px;
+}
+
+#sidebar {
+    position: absolute;
+    top: 150px;
+    right: 0px;
+}
+
+#content a:hover, #sidebar a:hover,
+#sidebar a.selected {
+    text-decoration: none !important;
 }
 
 .account-icons {
