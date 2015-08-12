@@ -1,7 +1,13 @@
 module RedmineMaterialTheme::Patches::MenuHelperPatch
   def self.included(base)
-    unloadable
+    base.extend(ClassMethods)
     base.send(:include, InstanceMethods)
+    base.class_eval do
+      unloadable
+    end
+  end
+
+  module ClassMethods
   end
 
   module InstanceMethods
@@ -74,11 +80,11 @@ module RedmineMaterialTheme::Patches::MenuHelperPatch
                          url, node.html_options(selected: selected)
 
                # => :project_menu, : application_menu
-               when l(:label_browse), l(:label_calendar), l(:label_forum),
+               when l(:label_browse), l(:label_calendar), l(:label_board_plural),
                     l(:label_activity), l(:label_news), l(:label_file_plural),
                     l(:label_issue_plural), l(:label_issue_new), l(:label_gantt),
                     l(:label_settings), l(:label_wiki), l(:label_repository),
-                    l(:label_settings), l(:label_document_plural)
+                    l(:label_document_plural)
                  link_to h(caption), url, node.html_options(selected: selected).
                                           merge(class: ['mdl-tabs__tab', "#{active}",
                                                         "#{node.html_options[:class]}"])
@@ -93,3 +99,6 @@ module RedmineMaterialTheme::Patches::MenuHelperPatch
     end
   end
 end
+
+Redmine::MenuManager::MenuHelper.
+  send :include, RedmineMaterialTheme::Patches::MenuHelperPatch

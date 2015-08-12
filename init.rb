@@ -11,6 +11,3 @@ Redmine::Plugin.register :redmine_material_theme do
   requires_redmine version_or_higher: '3.0.0'
   requires_redmine_plugin :redmine_base_deface, version_or_higher: '0.0.1'
 end
-
-Redmine::MenuManager::MenuHelper.
-  send :include, RedmineMaterialTheme::Patches::MenuHelperPatch

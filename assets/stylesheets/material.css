@@ -3,11 +3,19 @@
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url(./fonts/MaterialIcons-Regular.eot);
-    src: url(./fonts/MaterialIcons-Regular.eot?#iefix) format('embedded-opentype'),
-    url(./fonts/MaterialIcons-Regular.woff) format('woff'),
-    url(./fonts/MaterialIcons-Regular.woff2) format('woff2'),
-    url(./fonts/MaterialIcons-Regular.ttf) format('truetype');
+    src: url(../fonts/MaterialIcons-Regular.eot);
+    src: url(../fonts/MaterialIcons-Regular.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/MaterialIcons-Regular.woff) format('woff'),
+    url(../fonts/MaterialIcons-Regular.woff2) format('woff2'),
+    url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Helvetica Arial';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/RobotoDraftRegular.woff) format('woff'),
+    url(../fonts/RobotoDraftRegular.woff2) format('woff2');
 }
 
 .material-icons {
@@ -61,17 +69,25 @@
     background: none;
 }
 
+.mdl-data-table__cell--non-numeric.mdl-data-table__cell--non-numeric {
+    text-align: center;
+}
+
 .nav-scrollable-menu {
   max-height: 330px;
   overflow-x: hidden;
   overflow-y: auto;
-  margin-left: -26px;
+  margin: 30px 0px 0px -26px;
 }
 
 .scrollable-menu {
     max-height: 330px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+html {
+    overflow: hidden !important;
 }
 
 .scrollable-menu::-webkit-scrollbar,
@@ -87,8 +103,26 @@
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.75);
 }
 
-.box p, .box h3, .box a, .box ul {
+.box p, .box h3, .box a,
+.box ul, .box span {
     margin-left: 10px;
+}
+
+.box label a, .box span a {
+    margin: auto;
+}
+
+.tabular label {
+    font-weight: normal;
+}
+
+tr.project.idnt-1 td.name {
+    padding-left: 3em;
+}
+
+.members span.organization-members,
+.members span.organization-members a {
+    margin: auto !important;
 }
 
 a.mdl-button, .mdl-menu__item {
@@ -106,6 +140,11 @@ a.mdl-tabs__tab {
     backdrop-filter: grayscale(1) contrast(3) blur(1px);
 }
 
+#header .mdl-layout-title {
+    text-decoration: none !important;
+    backdrop-filter: grayscale(1) contrast(3) blur(1px);
+}
+
 .mdl-tabs__tab-bar {
     border: none;
 }
@@ -119,7 +158,7 @@ a.mdl-tabs__tab {
     background: none;
 }
 
-h3, h2, .tabs {
+h4, h3, h2, .tabs {
     font-family: "Roboto","Helvetica","Arial",sans-serif;
     font-size: 20px;
     line-height: 1;
@@ -128,9 +167,8 @@ h3, h2, .tabs {
     box-sizing: border-box;
 }
 
-legend {
+body {
     font-family: "Roboto","Helvetica","Arial",sans-serif;
-    font-size: 20px;
     line-height: 1;
     letter-spacing: .02em;
     font-weight: 400;
@@ -141,10 +179,20 @@ legend {
 label {
     font-family: "Roboto","Helvetica","Arial",sans-serif;
     font-size: 13px;
+    font-style: italic;
     line-height: 1;
+    font-weight: 400;
     letter-spacing: .02em;
     box-sizing: border-box;
     backdrop-filter: blur(1px);
+}
+
+#projects-index ul.projects div.root a.project {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+#projects-index ul.projects ul.projects {
+    border: none;
 }
 
 #sidebar h3 {
@@ -157,8 +205,12 @@ label {
     right: 0px;
 }
 
+#sidebar .contextual {
+    margin: 0em 5em 2em 0em;
+}
+
 #content a:hover, #sidebar a:hover,
-#sidebar a.selected {
+#sidebar a.selected, a.root {
     text-decoration: none !important;
 }
 
@@ -174,13 +226,7 @@ label {
     outline: none;
 }
 
-.nav-icons:hover {
-    box-sizing: border-box;
-    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
-    color: rgb(139,195,74);
-}
-
-.nav-icons.is-active {
+.nav-icons:hover, .nav-icons.is-active {
     box-sizing: border-box;
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
     color: rgb(139,195,74);
@@ -191,8 +237,10 @@ label {
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
-.gravatar {
+img.gravatar {
     cursor: pointer;
+    background: none !important;
+    border: none !important;
 }
 
 #login-form {
@@ -204,11 +252,23 @@ label {
     padding: 16px;
 }
 
+#holder a {
+    margin-left: 60px;
+}
+
 #user-menu {
-    margin: -4px 0px 12px 12px;
+    margin: -18px -1px -2px -2px;
+}
+
+input#q {
+    border: none;
 }
 
 #header {
+    padding: 0px;
+    margin: 0px 10px 0px 0px;
     background: url(../images/transparent.jpg) center / cover;
     min-height: 120px;
+    max-height: 150px;
+    width: 100%;
 }
