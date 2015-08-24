@@ -39,6 +39,12 @@
     /* Support for IE. */
     font-feature-settings: 'liga';
     backdrop-filter: blur(1px);
+    outline: none;
+}
+
+.table-icons {
+    height: auto;
+    line-height: auto;
 }
 
 .mdl-layout-title {
@@ -158,7 +164,7 @@ a.mdl-tabs__tab {
     background: none;
 }
 
-h4, h3, h2, .tabs {
+h4, h3, h2, h1, .tabs {
     font-family: "Roboto","Helvetica","Arial",sans-serif;
     font-size: 20px;
     line-height: 1;
@@ -200,7 +206,7 @@ label {
 }
 
 #sidebar {
-    position: absolute;
+    position: absolute !important;
     top: 150px;
     right: 0px;
 }
@@ -271,4 +277,27 @@ input#q {
     min-height: 120px;
     max-height: 150px;
     width: 100%;
+}
+
+#ajax-indicator {
+    background: none;
+    border: none;
+}
+
+.issues-all {
+    margin: 5px;
+    color: gray;
+    font-size: 16px;
+}
+
+.issues-close {
+    margin: 5px;
+    color: red;
+    font-size: 16px;
+}
+
+.issues-open {
+    margin: 5px;
+    font-size: 16px;
+    color: rgb(76,175,80);
 }
