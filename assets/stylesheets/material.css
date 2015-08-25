@@ -146,7 +146,15 @@ a.mdl-tabs__tab {
     backdrop-filter: grayscale(1) contrast(3) blur(1px);
 }
 
-#header .mdl-layout-title {
+#header .mdl-layout-title.with-menu {
+    position: fixed;
+    text-decoration: none !important;
+    backdrop-filter: grayscale(1) contrast(3) blur(1px);
+}
+
+#header .mdl-layout-title.without-menu {
+    position: absolute;
+    top: 35px;
     text-decoration: none !important;
     backdrop-filter: grayscale(1) contrast(3) blur(1px);
 }
@@ -274,7 +282,6 @@ input#q {
     padding: 0px;
     margin: 0px 10px 0px 0px;
     background: url(../images/transparent.jpg) center / cover;
-    min-height: 120px;
     max-height: 150px;
     width: 100%;
 }

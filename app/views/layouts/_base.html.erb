@@ -20,7 +20,11 @@
           <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col">
               <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title"><%= page_header_title %></span>
+                <% if display_main_menu?(@project) %>
+                  <span class="mdl-layout-title with-menu"><%= page_header_title %></span>
+                <% else -%>
+                  <span class="mdl-layout-title without-menu"><%= page_header_title %></span>
+                <% end %>
                 <div class="mdl-layout-spacer"></div>
                 <% if User.current.logged? || !Setting.login_required? %>
                   <div id="quick-search">

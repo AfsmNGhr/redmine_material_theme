@@ -27,9 +27,10 @@ module RedmineMaterialTheme::Patches::MenuHelperPatch
              when :top_menu
                links.empty? ? nil : content_tag(:ul, links.join("\n").html_safe,
                                                 class: 'nav-scrollable-menu')
-             when :project_menu, :application_menu
+             when :project_menu, :application_menu, :domain_menu
                links.empty? ? nil : content_tag(:ul, links.join("\n").html_safe,
-                                                class: ['mdl-tabs__tab-bar',
+                                                class: ['autoscroll',
+                                                        'mdl-tabs__tab-bar',
                                                         'mdl-tabs', 'mdl-js-tabs',
                                                         'mdl-js-ripple-effect'])
              else
@@ -94,13 +95,14 @@ module RedmineMaterialTheme::Patches::MenuHelperPatch
             link_to h(caption), url, node.html_options(selected: selected)
           end
 
-        when :project_menu, :application_menu
+        when :project_menu, :application_menu, :domain_menu
           case h(caption)
           when l(:label_browse), l(:label_calendar), l(:label_board_plural),
                l(:label_activity), l(:label_news), l(:label_file_plural),
                l(:label_issue_plural), l(:label_issue_new), l(:label_gantt),
                l(:label_settings), l(:label_wiki), l(:label_repository),
-               l(:label_document_plural), l(:label_contact_plural)
+               l(:label_document_plural), l(:label_contact_plural),
+               l(:label_domain_plural), l(:label_hosting_plural)
             link_to h(caption), url, node.html_options(selected: selected).
                                      merge(class: ['mdl-tabs__tab', "#{active}",
                                                    "#{node.html_options[:class]}"])
@@ -112,7 +114,11 @@ module RedmineMaterialTheme::Patches::MenuHelperPatch
     end
 
     def render_main_menu_with_material_and_icons(project)
-      render_menu_with_material_and_icons((project && !project.new_record?) ? :project_menu : :application_menu, project)
+      if URI(request.url).path == '/domains'
+        render_menu_with_material_and_icons(:domain_menu, project)
+      else
+        render_menu_with_material_and_icons((project && !project.new_record?) ? :project_menu : :application_menu, project)
+      end
     end
   end
 end
