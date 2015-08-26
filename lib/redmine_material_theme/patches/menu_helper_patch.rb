@@ -29,8 +29,7 @@ module RedmineMaterialTheme::Patches::MenuHelperPatch
                                                 class: 'nav-scrollable-menu')
              when :project_menu, :application_menu, :domain_menu
                links.empty? ? nil : content_tag(:ul, links.join("\n").html_safe,
-                                                class: ['autoscroll',
-                                                        'mdl-tabs__tab-bar',
+                                                class: ['mdl-tabs__tab-bar',
                                                         'mdl-tabs', 'mdl-js-tabs',
                                                         'mdl-js-ripple-effect'])
              else

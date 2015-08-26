@@ -47,8 +47,16 @@
     line-height: auto;
 }
 
-.mdl-layout-title {
+.with-menu {
+    position: relative;
     backdrop-filter: blur(1px);
+    margin-bottom: 45px;
+}
+
+.without-menu {
+    position: relative;
+    backdrop-filter: blur(1px);
+    margin-bottom: 35px;
 }
 
 .mdl-layout--fixed-drawer:not(.is-small-screen) > .mdl-layout__header {
@@ -64,10 +72,6 @@
     width: 60px;
     overflow-y: initial;
     border: none;
-}
-
-.mdl-layout-title {
-    margin-left: 10px;
 }
 
 .mdl-layout__header .mdl-layout__drawer-button {
@@ -114,6 +118,14 @@ html {
     margin-left: 10px;
 }
 
+#content .contextual .mdl-button {
+    margin: -12px 0px 0px 0px !important;
+}
+
+#content .mdl-button {
+    margin: -5px 0px 0px 0px !important;
+}
+
 .box label a, .box span a {
     margin: auto;
 }
@@ -131,7 +143,7 @@ tr.project.idnt-1 td.name {
     margin: auto !important;
 }
 
-a.mdl-button, .mdl-menu__item {
+.mdl-menu__item {
     color: black !important;
     text-decoration: none !important;
 }
@@ -142,19 +154,11 @@ a.mdl-button, .mdl-menu__item {
 
 a.mdl-tabs__tab {
     text-decoration: none !important;
-    background: rgba(0,0,0,.6);
-    backdrop-filter: grayscale(1) contrast(3) blur(1px);
+    background: rgba(0,0,0,.4);
+    backdrop-filter: grayscale(1) contrast(3) blur(1px); */
 }
 
-#header .mdl-layout-title.with-menu {
-    position: fixed;
-    text-decoration: none !important;
-    backdrop-filter: grayscale(1) contrast(3) blur(1px);
-}
-
-#header .mdl-layout-title.without-menu {
-    position: absolute;
-    top: 35px;
+#header {
     text-decoration: none !important;
     backdrop-filter: grayscale(1) contrast(3) blur(1px);
 }
@@ -166,6 +170,12 @@ a.mdl-tabs__tab {
 #main-menu.selected:after {
     heihgt: 4px !important;
     background: rgb(139,195,74) !important;
+}
+
+#main-menu {
+    position: absolute;
+    bottom: 0px;
+    margin: 0px -500px 0px 10px;
 }
 
 #main-menu li:hover, #main-menu li .selected {
@@ -231,7 +241,7 @@ label {
 .account-icons {
     display: inline-block;
     vertical-align: middle;
-    padding-right: 10px
+    padding-right: 10px;
 }
 
 .nav-icons {
@@ -249,7 +259,7 @@ label {
 .mdl-navigation {
     box-sizing: border-box;
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
-}
+ }
 
 img.gravatar {
     cursor: pointer;
@@ -307,4 +317,8 @@ input#q {
     margin: 5px;
     font-size: 16px;
     color: rgb(76,175,80);
+}
+
+.button-update {
+    margin: 30px 0px 0px 0px !important;
 }
