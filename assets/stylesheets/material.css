@@ -113,6 +113,14 @@ html {
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.75);
 }
 
+.mdl-menu__container:not(.is-visible) {
+    visibility: hidden;
+}
+
+.mdl-menu__container.is-visible {
+    visibility: visible;
+}
+
 .box p, .box h3, .box a,
 .box ul, .box span {
     margin-left: 10px;
