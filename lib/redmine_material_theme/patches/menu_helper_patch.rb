@@ -101,7 +101,8 @@ module RedmineMaterialTheme::Patches::MenuHelperPatch
                l(:label_issue_plural), l(:label_issue_new), l(:label_gantt),
                l(:label_settings), l(:label_wiki), l(:label_repository),
                l(:label_document_plural), l(:label_contact_plural),
-               l(:label_domain_plural), l(:label_hosting_plural)
+               l(:label_domain_plural), l(:label_hosting_plural),
+               l(:label_access_plural)
             link_to h(caption), url, node.html_options(selected: selected).
                                      merge(class: ['mdl-tabs__tab', "#{active}",
                                                    "#{node.html_options[:class]}"])

@@ -126,6 +126,10 @@ html {
     margin-left: 10px;
 }
 
+#content .autoscroll {
+    margin: 20px 0px 0px 0px !important;
+}
+
 #content .contextual .mdl-button {
     margin: -12px 0px 0px 0px !important;
 }

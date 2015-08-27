@@ -72,8 +72,10 @@
             <div id="main" class="<%= sidebar_content? ? '' : 'nosidebar' %>">
               <div id="content">
                 <div class="mdl-cell <%= sidebar_content? ? 'mdl-cell--12-col' : 'mdl-cell--12-col' %> mdl-cell--12-col-tablet">
-                  <%= render_flash_messages %>
-                  <%= yield %>
+                  <div id="block">
+                    <%= render_flash_messages %>
+                    <%= yield %>
+                  </div>
                   <%= call_hook :view_layouts_base_content %>
                   <div style="clear:both;"></div>
                 </div>
