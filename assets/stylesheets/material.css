@@ -338,3 +338,9 @@ input#q {
 .button-update {
     margin: 30px 0px 0px 0px !important;
 }
+
+
+#block .autoscroll{
+  float: left;
+  width: 100%;
+}
