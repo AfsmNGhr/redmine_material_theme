@@ -302,7 +302,7 @@ input#q {
     padding: 0px;
     margin: 0px 10px 0px 0px;
     background: url(../images/transparent.jpg) center / cover;
-    max-height: 80px;
+    max-height: 150px;
     width: 100%;
 }
 
