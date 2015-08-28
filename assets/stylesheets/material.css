@@ -49,12 +49,12 @@
 
 #main-menu {
   position: relative !important;
-  margin: 0px;
+  margin: 0px !important;
   float: left;
 }
 
 #header > .mdl-grid > .mdl-cell {
-  margin: 0px;
+  margin: 0px !important;
 }
 
 .mdl-layout--fixed-drawer > .mdl-layout__header .mdl-layout__header-row {
