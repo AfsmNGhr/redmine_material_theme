@@ -170,7 +170,7 @@ tr.project.idnt-1 td.name {
 
 a.mdl-tabs__tab {
     text-decoration: none !important;
-    background: rgba(0,0,0,.4);
+    background: rgba(0,0,0,.5);
     backdrop-filter: grayscale(1) contrast(3) blur(1px); */
 }
 
