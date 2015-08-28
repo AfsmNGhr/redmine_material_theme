@@ -48,7 +48,7 @@
 }
 
 #main-menu {
-  position: relative;
+  position: relative !important;
   margin: 0px;
   float: left;
 }
