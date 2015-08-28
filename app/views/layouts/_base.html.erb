@@ -17,48 +17,44 @@
 
       <header class="mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
         <div id="header">
-          <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--12-col">
-              <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title"><%= page_header_title %></span>
-                <div class="mdl-layout-spacer"></div>
-                <% if User.current.logged? || !Setting.login_required? %>
-                  <div id="quick-search">
-                    <%= form_tag({:controller => 'search', :action => 'index', :id => @project}, :method => :get ) do %>
-                      <%= hidden_field_tag(controller.default_search_scope, 1, :id => nil) if controller.default_search_scope %>
-                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                        <label class="mdl-button mdl-js-button mdl-button--icon" for='q'>
-                          <i class="material-icons">search</i>
-                        </label>
-                        <div class="mdl-textfield__expandable-holder">
-                          <label for='q'>
-                            <%= text_field_tag 'q', @question, :size => 20, :class => 'mdl-textfield__input', :accesskey => accesskey(:quick_search) %>
-                          </label>
-                        </div>
-                      </div>
-                    <% end %>
-
-                    <% unless User.current.projects.active.select(:id, :name, :identifier, :lft, :rgt).to_a.empty? -%>
-                      <button id="project-jump-nav" class="mdl-button mdl-js-button mdl-button--icon">
-                        <i class="material-icons">work</i>
-                      </button>
-                      <ul class="project-jump-nav scrollable-menu mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="project-jump-nav">
-                        <% User.current.projects.active.select(:id, :name, :identifier, :lft, :rgt).to_a.each do |project| -%>
-                          <%= link_to project.name, project_path(id: project.id, jump: current_menu_item), class: 'mdl-menu__item' %>
-                        <% end %>
-                      </ul>
-                    <% end %>
+          <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title"><%= page_header_title %></span>
+            <div class="mdl-layout-spacer"></div>
+            <% if User.current.logged? || !Setting.login_required? %>
+              <div id="quick-search">
+                <%= form_tag({:controller => 'search', :action => 'index', :id => @project}, :method => :get ) do %>
+                  <%= hidden_field_tag(controller.default_search_scope, 1, :id => nil) if controller.default_search_scope %>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                    <label class="mdl-button mdl-js-button mdl-button--icon" for='q'>
+                      <i class="material-icons">search</i>
+                    </label>
+                    <div class="mdl-textfield__expandable-holder">
+                      <label for='q'>
+                        <%= text_field_tag 'q', @question, :size => 20, :class => 'mdl-textfield__input', :accesskey => accesskey(:quick_search) %>
+                      </label>
+                    </div>
                   </div>
                 <% end %>
-              </div>
 
-              <% if display_main_menu?(@project) %>
-                <div id="main-menu">
-                  <%= render_main_menu_with_material_and_icons(@project) %>
-                </div>
-              <% end %>
-            </div>
+                <% unless User.current.projects.active.select(:id, :name, :identifier, :lft, :rgt).to_a.empty? -%>
+                  <button id="project-jump-nav" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">work</i>
+                  </button>
+                  <ul class="project-jump-nav scrollable-menu mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="project-jump-nav">
+                    <% User.current.projects.active.select(:id, :name, :identifier, :lft, :rgt).to_a.each do |project| -%>
+                      <%= link_to project.name, project_path(id: project.id, jump: current_menu_item), class: 'mdl-menu__item' %>
+                    <% end %>
+                  </ul>
+                <% end %>
+              </div>
+            <% end %>
           </div>
+
+          <% if display_main_menu?(@project) %>
+            <div id="main-menu">
+              <%= render_main_menu_with_material_and_icons(@project) %>
+            </div>
+          <% end %>
         </div>
       </header>
 

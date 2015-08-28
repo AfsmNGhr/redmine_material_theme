@@ -50,6 +50,7 @@
 #main-menu {
   position: relative !important;
   margin: 0px !important;
+  left: 6px;
   float: left;
 }
 
