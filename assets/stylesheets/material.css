@@ -47,15 +47,16 @@
     line-height: auto;
 }
 
-#main-menu {
-  position: relative !important;
-  margin: 0px !important;
-  left: 6px;
-  float: left;
+#header .mdl-layout-title {
+    left: 16px;
+    backdrop-filter: blur(1px);
 }
 
-#header > .mdl-grid > .mdl-cell {
-  margin: 0px !important;
+#main-menu {
+    position: relative !important;
+    margin: 0px !important;
+    left: 16px;
+    float: left;
 }
 
 .mdl-layout--fixed-drawer > .mdl-layout__header .mdl-layout__header-row {
