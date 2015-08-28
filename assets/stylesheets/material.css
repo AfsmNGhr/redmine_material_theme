@@ -49,8 +49,7 @@
 
 #main-menu {
   position: relative;
-  bottom: 0px;
-  margin: 0px -500px 0px 10px;
+  margin: 0px;
   float: left;
 }
 
@@ -303,7 +302,7 @@ input#q {
     padding: 0px;
     margin: 0px 10px 0px 0px;
     background: url(../images/transparent.jpg) center / cover;
-    max-height: 150px;
+    max-height: 80px;
     width: 100%;
 }
 
