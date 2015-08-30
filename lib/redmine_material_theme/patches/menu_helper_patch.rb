@@ -82,7 +82,7 @@ module RedmineMaterialTheme::Patches::MenuHelperPatch
                [ 'help', 'nav-help' ]
              end
       [ (content_tag(:i, label, class: ['material-icons', 'nav-icons', "#{active}"], id: id) +
-         (content_tag(:span, l(:label_help).gsub("\n", "<br>"), class: 'mdl-tooltip', for: id))),
+         (content_tag(:span, h(caption).gsub("\n", "<br>"), class: 'mdl-tooltip', for: id))),
         node.html_options(selected: selected) ]
     end
 

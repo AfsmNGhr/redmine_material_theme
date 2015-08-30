@@ -11,7 +11,9 @@
               <%= render_menu_with_material_and_icons :account_menu -%>
             </div>
           </nav>
-          <%= render_menu_with_material_and_icons :top_menu if User.current.logged? || !Setting.login_required? -%>
+          <div id="nav-top-menu">
+            <%= render_menu_with_material_and_icons :top_menu if User.current.logged? || !Setting.login_required? -%>
+          </div>
         </header>
       </div>
 
