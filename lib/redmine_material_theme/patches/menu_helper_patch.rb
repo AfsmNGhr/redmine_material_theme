@@ -114,7 +114,8 @@ module RedmineMaterialTheme::Patches::MenuHelperPatch
     end
 
     def render_main_menu_with_material_and_icons(project)
-      if URI(request.url).path == '/domains'
+      case URI(request.url).path
+      when /domains/i
         render_menu_with_material_and_icons(:domain_menu, project)
       else
         render_menu_with_material_and_icons((project && !project.new_record?) ? :project_menu : :application_menu, project)
