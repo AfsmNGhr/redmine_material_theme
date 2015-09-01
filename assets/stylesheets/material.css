@@ -146,7 +146,11 @@ html {
     font-weight: normal;
 }
 
-tr.project.idnt-1 td.name {
+tr.project.idnt-1 td.name,
+tr.project.idnt-2 td.name,
+tr.project.idnt-3 td.name,
+tr.project.idnt-4 td.name,
+tr.project.idnt-5 td.name {
     padding-left: 3em;
 }
 
