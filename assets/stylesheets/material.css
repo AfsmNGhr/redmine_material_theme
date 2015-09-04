@@ -252,6 +252,7 @@ label {
 }
 
 #sidebar {
+/*    max-width: 20%!important;*/
     /*position: absolute !important;
     top: 150px;
     right: 0px;*/
@@ -361,5 +362,6 @@ input#q {
 /*     content: "\e7ee"; */
 /* } */
 #content{
-    float: left;
+    float: left!important;
+    min-width: 75%;
 }
