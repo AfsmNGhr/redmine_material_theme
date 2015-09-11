@@ -252,9 +252,10 @@ label {
 }
 
 #sidebar {
-    position: absolute !important;
+/*    max-width: 20%!important;*/
+    /*position: absolute !important;
     top: 150px;
-    right: 0px;
+    right: 0px;*/
 }
 
 #sidebar .contextual {
@@ -360,3 +361,7 @@ input#q {
 /*     transform: translate(0, 0); */
 /*     content: "\e7ee"; */
 /* } */
+#content{
+    float: left!important;
+    min-width: 75%;
+}
