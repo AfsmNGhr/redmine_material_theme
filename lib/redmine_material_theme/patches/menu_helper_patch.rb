@@ -82,18 +82,9 @@ module RedmineMaterialTheme::Patches::MenuHelperPatch
     end
 
     def style_for_tab_menu(node, caption, selected, active)
-      case h(caption)
-      when l(:label_browse), l(:label_calendar), l(:label_board_plural),
-           l(:label_activity), l(:label_news), l(:label_file_plural),
-           l(:label_issue_plural), l(:label_issue_new), l(:label_gantt),
-           l(:label_settings), l(:label_wiki), l(:label_repository),
-           l(:label_document_plural), l(:label_contact_plural),
-           l(:label_domain_plural), l(:label_hosting_plural),
-           l(:label_access_plural)
-        [h(caption), node.html_options(selected: selected).
-                     merge(class: ['mdl-tabs__tab', "#{active}",
-                                   "#{node.html_options[:class]}"])]
-      end
+      [h(caption), node.html_options(selected: selected).
+                   merge(class: ['mdl-tabs__tab', "#{active}",
+                                 "#{node.html_options[:class]}"])]
     end
 
     def style_for_list_menu(menu)
